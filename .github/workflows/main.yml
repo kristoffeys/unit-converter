@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: pxgamer/composer-action@master
+      with:
+        command: install --ignore-platform-reqs
+    - name: run tests
+      run: |
+        bin/phpunit
