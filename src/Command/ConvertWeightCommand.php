@@ -16,7 +16,6 @@ class ConvertWeightCommand extends AbstractConvertCommand
     {
         $this
             ->setDescription('Converts a weight unit')
-            ->setHelp('This command allows you to convert a weight unit between kilogram, pound and stone')
-        ;
+            ->setHelp('This command allows you to convert a weight unit between kilogram, pound and stone');
     }
 }

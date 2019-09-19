@@ -72,7 +72,8 @@ class UnitConverter
     /**
      * Checks whether all given classnames have the same namespace.
      */
-    private function hasSameNamespace(string ...$classNames): bool {
+    private function hasSameNamespace(string ...$classNames): bool
+    {
         $namespace = (new ReflectionClass($classNames[0]))->getNamespaceName();
         unset($classNames[0]);
 

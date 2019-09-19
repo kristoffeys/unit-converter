@@ -7,7 +7,9 @@ namespace App\Unit;
 abstract class AbstractUnit implements UnitInterface
 {
     abstract public static function getName(): string;
+
     abstract public static function fromNativeUnit(float $value): UnitInterface;
+
     abstract public function toNativeUnit(): AbstractNativeUnit;
 
     protected $value;

@@ -17,7 +17,6 @@ class ConvertTemperatureCommand extends AbstractConvertCommand
     {
         $this
             ->setDescription('Converts a temperature unit')
-            ->setHelp('This command allows you to convert a temperature unit between celsius, kelvin and fahrenheit')
-        ;
+            ->setHelp('This command allows you to convert a temperature unit between celsius, kelvin and fahrenheit');
     }
 }

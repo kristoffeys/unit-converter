@@ -45,7 +45,9 @@ abstract class AbstractConvertCommand extends Command
 
     protected function getUnits(): array
     {
-        return array_map(static function ($unitClass) { return $unitClass::getName(); }, $this->availableUnitClasses);
+        return array_map(static function ($unitClass) {
+            return $unitClass::getName();
+        }, $this->availableUnitClasses);
     }
 
     public function execute(InputInterface $input, OutputInterface $output): void
@@ -53,10 +55,10 @@ abstract class AbstractConvertCommand extends Command
         $helper = $this->getHelper('question');
 
         $question = new ChoiceQuestion('What unit do you want to convert from?', $this->getUnits());
-        $from = $helper->ask($input,$output,$question);
+        $from = $helper->ask($input, $output, $question);
 
         $question = new ChoiceQuestion('What unit do you want to convert to?', array_diff($this->getUnits(), [$from]));
-        $to = $helper->ask($input,$output,$question);
+        $to = $helper->ask($input, $output, $question);
 
         $question = new Question('What is the value you want to convert?', null);
         $question->setValidator(static function ($answer) {
@@ -72,7 +74,8 @@ abstract class AbstractConvertCommand extends Command
         $output->writeln('Converted value: ' . $this->getResult());
     }
 
-    public function getResult(): string {
+    public function getResult(): string
+    {
         return $this->result;
     }
 }
