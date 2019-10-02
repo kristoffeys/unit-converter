@@ -1,6 +1,6 @@
 # Unit Converter
 
-In order to be able to use this unit converter, first install all the dependencies:
+In order to be able to use this unit converter, first install all the dependencies via [composer](https://getcomposer.org/):
 ```
 composer install
 ```
